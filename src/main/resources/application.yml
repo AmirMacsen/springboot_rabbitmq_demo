@@ -1,0 +1,21 @@
+spring:
+  rabbitmq:
+    host: 43.239.72.36
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    # 确认模式
+    publisher-confirm-type: correlated
+    # 开启回退模式
+    publisher-returns: true
+    listener:
+      simple:
+        # 手动签收
+        acknowledge-mode: manual
+
+
+#日志格式
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
